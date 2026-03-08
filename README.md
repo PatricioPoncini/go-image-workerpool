@@ -7,18 +7,16 @@ Muchas veces vemos ejemplos de concurrencia con `time.Sleep`, pero aquí ponemos
 ## `🛠️ ¿Qué hace este programa?`
 
 El script compara dos formas de procesar imágenes en una carpeta:
-- Modo Secuencial: Procesa una imagen a la vez (un solo núcleo trabajando).
-- Worker Pool (Concurrente): Levanta un grupo de workers basado en la cantidad de CPUs de tu máquina para procesar múltiples imágenes en paralelo.
+- **Modo Secuencial:** Procesa una imagen a la vez (un solo núcleo trabajando).
+- **Worker Pool (Concurrente):** Levanta un grupo de workers basado en la cantidad de CPUs de tu máquina para procesar múltiples imágenes en paralelo.
 
 ## `📈 ¿Por qué usar un Worker Pool?`
 
 En el backend, no queremos saturar los recursos ni tampoco desperdiciarlos. Usar un Worker Pool nos permite:
 
-    Limitar el uso de memoria: No lanzamos 10,000 procesos de golpe.
-
-    Maximizar la CPU: Ponemos a trabajar todos los núcleos disponibles.
-
-    Reducir tiempos: Podemos ver una mejora en el tiempo de procesamiento
+- **Limitar el uso de memoria:** No lanzamos 10,000 procesos de golpe.
+- **Maximizar la CPU:** Ponemos a trabajar todos los núcleos disponibles.
+- **Reducir tiempos:** Podemos ver una mejora en el tiempo de procesamiento
 
 ## `🚀 Cómo ejecutarlo`
 Dentro de la carpeta `/images` vas a ver una serie de imagenes. Podes fijarte vos mismo cuanto pesa cada una. Una vez estés preparado, podes ejecutar el script con el siguiente comando:
