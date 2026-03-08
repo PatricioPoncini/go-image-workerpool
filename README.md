@@ -23,5 +23,15 @@ Dentro de la carpeta `/images` vas a ver una serie de imagenes. Podes fijarte vo
 ```shell
 go run main.go
 ```
-Luego de ejecutarlo, se habrá creado una carpeta `/output`. Esta carpeta dentro contiene las mismas imagenes pero ahora pesando un 20% menos. Además, vas a tener un log de salida que te va a indicar el tiempo de procesamiento secuencial, y el tiempo de procesamiento con múltiples workers.
+Luego de ejecutarlo, se habrá creado una carpeta `/output`. Esta carpeta dentro contiene las mismas imagenes pero ahora pesando un 20% menos. Además, vas a tener un log de salida que te va a indicar el tiempo de procesamiento secuencial, y el tiempo de procesamiento con múltiples workers. Este es un ejemplo:
+```shell
+System: 12 cores | Images to process: 10
 
+Starting Sequential Optimization...
+Sequential took: 5.015393294s
+
+Starting Worker Pool with 12 workers...
+Worker Pool took: 1.374009325s
+
+Performance gain: 3.65x faster
+```
