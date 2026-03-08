@@ -56,7 +56,7 @@ func main() {
 		_ = optimizeImage(filepath.Base(file))
 	}
 	seqDuration := time.Since(start)
-	fmt.Printf("Sequential took: %v\n\n", seqDuration)
+	fmt.Printf("Sequential took: %.2f seconds\n\n", seqDuration.Seconds())
 
 	_ = os.RemoveAll(outputDir)
 	_ = os.MkdirAll(outputDir, os.ModePerm)
@@ -85,7 +85,7 @@ func main() {
 	wg.Wait()
 
 	poolDuration := time.Since(start)
-	fmt.Printf("Worker Pool took: %v\n", poolDuration)
+	fmt.Printf("Worker Pool took: %.2f seconds\n", poolDuration.Seconds())
 
 	speedup := float64(seqDuration) / float64(poolDuration)
 	fmt.Printf("\nPerformance gain: %.2fx faster\n", speedup)
